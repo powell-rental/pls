@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual PLS-1 — Powell Light Stand</title>
+<meta name="description" content="Manual de uso, conexión eléctrica y mantenimiento de la torre de iluminación Powell Light Stand PLS-1.">
+<style>
+@page{size:A4;margin:14mm 14mm 16mm}
+:root{--rojo:#c8102e;--azul:#0b5cad;--verde:#1f8a3a;--ama:#f2b705;--tx:#16181c;--tx2:#50565f;--linea:#d6d9de;--fondo:#f6f7f9}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--tx);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.pag{max-width:820px;margin:0 auto;padding:0 16px 40px}
+header.portada{background:var(--tx);color:#fff;padding:28px 24px 24px;margin:0 -16px 20px}
+.portada .marca{font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.portada h1{font-size:32px;margin:6px 0 4px;line-height:1.15}
+.portada p{margin:0;opacity:.85}
+.portada .franja{height:6px;background:var(--rojo);margin:18px -24px -24px}
+.borrador{border:1px dashed var(--tx2);border-radius:8px;padding:8px 12px;font-size:13px;color:var(--tx2);margin:0 0 18px}
+h2{font-size:22px;margin:34px 0 10px;padding-bottom:6px;border-bottom:3px solid var(--rojo);line-height:1.2}
+h3{font-size:17px;margin:20px 0 6px}
+p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-left:22px}
+li{margin:0 0 4px}
+table{width:100%;border-collapse:collapse;margin:6px 0 14px;font-size:14px}
+th,td{border:1px solid var(--linea);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--fondo);font-weight:600}
+.caja{border-radius:8px;padding:10px 14px;margin:10px 0 14px}
+.peligro{background:#fdecee;border-left:6px solid var(--rojo)}
+.atencion{background:#fff8e1;border-left:6px solid var(--ama)}
+.nota{background:#eef4fb;border-left:6px solid var(--azul)}
+.caja>b:first-child{display:block;margin-bottom:2px}
+.cf{color:#8a5a00;background:#fff3cd;border-radius:4px;padding:0 4px;font-size:.92em;white-space:nowrap}
+nav.indice ol{columns:2;column-gap:28px;font-size:14px}
+nav.indice a{color:var(--tx);text-decoration:none}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.volt{border-radius:10px;color:#fff;padding:12px 14px}
+.volt h3{margin:0 0 4px;font-size:22px}
+.volt ol{margin:6px 0 0;padding-left:20px}
+.v380{background:var(--rojo)} .v220{background:var(--azul)}
+figure{margin:10px 0 16px;text-align:center}
+figure svg{max-width:100%;height:auto}
+figcaption{font-size:13px;color:var(--tx2);margin-top:4px}
+.check td:first-child{width:28px;text-align:center;font-size:16px}
+.firma{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:22px;font-size:13px}
+.firma div{border-top:1px solid var(--tx);padding-top:4px}
+footer{margin-top:40px;font-size:12px;color:var(--tx2);border-top:1px solid var(--linea);padding-top:8px}
+@media (max-width:620px){
+  .dos,.firma{grid-template-columns:1fr}
+  nav.indice ol{columns:1}
+  .portada h1{font-size:26px}
+  table{font-size:13px}
+  th,td{padding:5px 6px}
+}
+@media print{
+  body{font-size:10.5pt}
+  .pag{max-width:none;padding:0}
+  header.portada{margin:0 0 14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .caja,.volt,th,.cf{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h2{break-after:avoid;margin-top:22px}
+  h3{break-after:avoid}
+  table,figure,.caja,.volt{break-inside:avoid}
+  .salto{break-before:page}
+  a{color:inherit;text-decoration:none}
+  .noimp{display:none}
+}
+</style>
+</head>
+<body>
+<div class="pag">
+
+<header class="portada">
+  <div class="marca">Powell Rental &amp; Services SAS · Centenario, Neuquén</div>
+  <h1>Manual de uso y mantenimiento<br>Torre de iluminación Powell Light Stand PLS-1</h1>
+  <p>Torre LED de 6 m · 4 focos de 500 W · enchufable a 220 V o 380 V</p>
+  <div class="franja"></div>
+</header>
+
+<div class="borrador">Edición 1 · octubre 2026 · basada en el diseño v120 (configuración PLS-1). Los datos marcados <span class="cf">⚑ a confirmar</span> se completan con el prototipo y la firma del profesional matriculado. <span class="noimp">Para imprimir: Ctrl+P → A4.</span></div>
+
+<nav class="indice">
+<ol>
+  <li><a href="#seg">Seguridad: lo que nunca se hace</a></li>
+  <li><a href="#datos">Datos técnicos</a></li>
+  <li><a href="#partes">Partes de la torre</a></li>
+  <li><a href="#transp">Transporte, carga y descarga</a></li>
+  <li><a href="#sitio">Dónde se instala</a></li>
+  <li><a href="#patas">Abrir las patas y nivelar</a></li>
+  <li><a href="#elec">Conexión eléctrica</a></li>
+  <li><a href="#mastil">Subir el mástil y orientar los focos</a></li>
+  <li><a href="#oper">Durante el trabajo</a></li>
+  <li><a href="#guardar">Bajar y guardar</a></li>
+  <li><a href="#fallas">Problemas y soluciones</a></li>
+  <li><a href="#mant">Mantenimiento</a></li>
+  <li><a href="#tecnico">Para el electricista</a></li>
+  <li><a href="#check">Planilla de entrega y retiro</a></li>
+</ol>
+</nav>
+
+<!-- ============================================================ -->
+<h2 id="seg">1. Seguridad: lo que nunca se hace</h2>
+<div class="caja peligro"><b>Peligro de vuelco, caída y electrocución</b>
+<ol>
+  <li><b>Nunca subir el mástil sin las 4 patas abiertas</b>, con su pasador puesto y el plato del husillo apoyado y cargado.</li>
+  <li><b>Nunca mover la torre con el mástil arriba</b>, ni con autoelevador, ni con grúa, ni empujando.</li>
+  <li><b>Nunca instalar debajo o cerca de líneas eléctricas aéreas.</b> Distancia mínima: la que haga falta para que, si la torre cae entera, no toque la línea (6 m de mástil + 4 m de margen = 10 m como mínimo).</li>
+  <li><b>Con alerta de viento, ráfagas fuertes o tormenta eléctrica: bajar el mástil.</b> Límite de viento para operar: <span class="cf">⚑ a confirmar con el matriculado</span>. Mientras no esté firmado: bajarlo si las ráfagas pasan de 80 km/h.</li>
+  <li><b>Nunca dejar el mástil arriba sin el pasador de la junta 1</b> (el que queda a la altura de la mano, ~1,8 m).</li>
+  <li><b>Nunca abrir el tablero con la torre enchufada.</b> Solo un electricista puede tocar adentro.</li>
+  <li><b>Nunca alimentar dos torres en cadena con 220 V</b> ni hacer adaptadores caseros. El único adaptador permitido es el chicote azul que viene con la torre.</li>
+  <li><b>Nadie debajo de la carga</b> cuando se iza la torre con grúa.</li>
+</ol>
+</div>
+<div class="caja atencion"><b>Elementos de protección</b> Casco, guantes y botines al abrir patas, subir el mástil e izar. Guantes para manipular los cables de acero.</div>
+
+<!-- ============================================================ -->
+<h2 id="datos">2. Datos técnicos</h2>
+<table>
+  <tr><th style="width:42%">Dato</th><th>Valor</th></tr>
+  <tr><td>Modelo</td><td>Powell Light Stand <b>PLS-1</b></td></tr>
+  <tr><td>Altura de trabajo (mástil arriba)</td><td><b>6 m</b>, mástil telescópico de 5 tramos</td></tr>
+  <tr><td>Altura recogida (para viajar)</td><td>2,49 m</td></tr>
+  <tr><td>Base (lo que ocupa viajando)</td><td>1,20 × 1,75 m · 2 torres entran en el ancho de un semi (2,40 m)</td></tr>
+  <tr><td>Lugar que ocupa con las patas abiertas</td><td>≈ 2,80 × 1,75 m (dejar libre ≈ 3,2 × 2,2 m para trabajar alrededor)</td></tr>
+  <tr><td>Peso</td><td><b>≈ 540 kg</b> (sin lastre)</td></tr>
+  <tr><td>Por semi de 12 m</td><td>12 torres</td></tr>
+  <tr><td>Focos</td><td>4 × Lumenac Stadium 500 W LED, IP65 · ≈ 72.500 lm cada uno (≈ 290.000 lm la torre)</td></tr>
+  <tr><td>Consumo</td><td><b>2 kW</b> (2,2 kVA) · <b>10 A en 220 V</b> · 2,5 A por foco</td></tr>
+  <tr><td>Alimentación</td><td>Ficha industrial <b>CEE 32 A de 5 polos, ROJA</b> (3 fases + neutro + tierra)</td></tr>
+  <tr><td>Tensión</td><td><b>380 V trifásico</b>: hasta <b>6 torres en cadena</b> · <b>220 V monofásico</b>: <b>1 sola torre</b>, con el chicote adaptador azul</td></tr>
+  <tr><td>Protecciones en cada torre</td><td>Protector de tensión (corta fuera de 180–250 V y rearma solo) · descargador de sobretensión · disyuntor 30 mA · térmica 16 A curva D · llave 0-I · luces verde / roja</td></tr>
+  <tr><td>Elevación del mástil</td><td>Malacate (winch) manual con freno automático · 3 cables de acero 1/4" 7×19 galvanizados</td></tr>
+  <tr><td>Patas</td><td>4 patas rebatibles en las puntas, husillo M30 con plato Ø200 en cada una</td></tr>
+  <tr><td>Movimiento</td><td>Autoelevador (bolsillos) o grúa (4 puntos de izaje). <b>No tiene ruedas: no se arrastra.</b></td></tr>
+  <tr><td>Estructura</td><td>Acero, pintura epoxi roja · cálculo estructural según CIRSOC (reglamento argentino)</td></tr>
+  <tr><td>Viento máximo para operar</td><td><span class="cf">⚑ a confirmar con el matriculado</span> (provisorio: bajar con ráfagas de más de 80 km/h)</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="partes">3. Partes de la torre</h2>
+<figure>
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="13" role="img" aria-label="Esquema de la torre con sus partes">
+  <rect x="0" y="0" width="720" height="380" fill="#fff"/>
+  <!-- base -->
+  <rect x="170" y="318" width="220" height="22" fill="#c8102e"/>
+  <rect x="176" y="340" width="14" height="12" fill="#444"/><rect x="370" y="340" width="14" height="12" fill="#444"/>
+  <!-- patas -->
+  <rect x="70" y="326" width="100" height="10" fill="#c8102e"/><rect x="390" y="326" width="100" height="10" fill="#c8102e"/>
+  <rect x="74" y="336" width="8" height="18" fill="#555"/><rect x="62" y="352" width="32" height="5" fill="#333"/>
+  <rect x="478" y="336" width="8" height="18" fill="#555"/><rect x="466" y="352" width="32" height="5" fill="#333"/>
+  <!-- piramide -->
+  <line x1="190" y1="318" x2="270" y2="250" stroke="#c8102e" stroke-width="5"/><line x1="370" y1="318" x2="290" y2="250" stroke="#c8102e" stroke-width="5"/>
+  <!-- mastil -->
+  <rect x="268" y="200" width="24" height="120" fill="#b0101f"/>
+  <rect x="270" y="150" width="20" height="55" fill="#a0a4aa"/>
+  <rect x="272" y="105" width="16" height="50" fill="#b4b8be"/>
+  <rect x="274" y="70" width="12" height="40" fill="#c4c8cc"/>
+  <rect x="275" y="44" width="10" height="30" fill="#d0d3d6"/>
+  <!-- cabezal y focos -->
+  <rect x="220" y="38" width="120" height="8" fill="#333"/>
+  <rect x="222" y="14" width="44" height="24" fill="#222"/><rect x="294" y="14" width="44" height="24" fill="#222"/>
+  <rect x="222" y="48" width="44" height="24" fill="#222"/><rect x="294" y="48" width="44" height="24" fill="#222"/>
+  <!-- winch, tablero, cajita -->
+  <rect x="296" y="232" width="18" height="14" fill="#333"/>
+  <rect x="242" y="268" width="24" height="26" fill="#ddd" stroke="#333"/>
+  <rect x="320" y="296" width="22" height="16" fill="#eee" stroke="#c8102e" stroke-width="2"/>
+  <!-- etiquetas -->
+  <g fill="#16181c">
+    <line x1="340" y1="26" x2="420" y2="26" stroke="#888"/><text x="425" y="30">Focos LED 4 × 500 W (en su lira)</text>
+    <line x1="340" y1="42" x2="420" y2="52" stroke="#888"/><text x="425" y="56">Cabezal con caja de tomas azules</text>
+    <line x1="290" y1="110" x2="420" y2="100" stroke="#888"/><text x="425" y="104">Mástil telescópico, 5 tramos</text>
+    <line x1="314" y1="239" x2="420" y2="150" stroke="#888"/><text x="425" y="154">Winch manual con freno</text>
+    <line x1="292" y1="215" x2="420" y2="190" stroke="#888"/><text x="425" y="194">Pasador de la junta 1 (~1,8 m)</text>
+    <line x1="342" y1="304" x2="420" y2="236" stroke="#888"/><text x="425" y="240">Cajita de fichas rojas ENTRADA / SALIDA</text>
+    <line x1="242" y1="280" x2="120" y2="240" stroke="#888"/><text x="20" y="232">Tablero (luces, llave,</text><text x="20" y="247">protecciones)</text>
+    <line x1="230" y1="285" x2="120" y2="290" stroke="#888"/><text x="20" y="290">Pirámide</text>
+    <line x1="80" y1="345" x2="40" y2="315" stroke="#888"/><text x="10" y="312">Pata + husillo</text>
+    <line x1="280" y1="340" x2="280" y2="370" stroke="#888"/><text x="292" y="372">Base con bolsillos para autoelevador y 4 puntos de izaje</text>
+  </g>
+</svg>
+<figcaption>Esquema (no a escala). Vista con el mástil a medio subir.</figcaption>
+</figure>
+
+<!-- ============================================================ -->
+<h2 id="transp" class="salto">4. Transporte, carga y descarga</h2>
+<h3>4.1 Posición de viaje</h3>
+<ul>
+  <li>Mástil <b>abajo del todo</b> y sin el pasador de trabajo (el pasador va en su lugar de guardado).</li>
+  <li>Focos <b>verticales con la cara hacia el mástil</b> y las perillas de la lira apretadas.</li>
+  <li>Las 4 patas guardadas sobre la base con su pasador de viaje y los husillos subidos.</li>
+  <li>Prolongadores, chicote y jabalina guardados y atados.</li>
+  <li>Altura en ruta: 2,49 m de torre + la plataforma del camión. Con plataforma de 1,40 m da 3,89 m: <b>no pasar de 4,10 m</b> (máximo legal, Ley 24.449).</li>
+  <li>Amarrar con 4 fajas a la plataforma, tomando la base (nunca el mástil ni el cabezal).</li>
+</ul>
+<h3>4.2 Con autoelevador</h3>
+<ul>
+  <li>Las uñas van por los <b>bolsillos de la base</b> (tubo de 140 × 60). Nunca por debajo del marco ni levantando de las patas.</li>
+  <li>Autoelevador de <b>1.000 kg o más</b>. Levantar lo justo, mástil siempre abajo.</li>
+</ul>
+<h3>4.3 Con grúa</h3>
+<ul>
+  <li>Izar de los <b>4 muñones de la base</b> (caño de 2" con disco tope), con <b>4 fajas de 100 mm</b>, una por muñón. Nunca con 2.</li>
+  <li>Largo de cada ramal: <b>4,5 m</b> (más cortas, la faja puede tocar los focos). Fajas de 1 t (violeta) como mínimo cada una; cada ramal lleva ≈ 350 kg.</li>
+  <li>Gancho y grúa para <b>1 t o más</b>. Mástil abajo, focos en posición de viaje. Nadie debajo.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="sitio">5. Dónde se instala</h2>
+<ul>
+  <li>Piso <b>firme y lo más parejo posible</b>: ripio compactado, tierra firme, hormigón. Con los husillos se compensa un desnivel chico <span class="cf">⚑ máximo a confirmar en el prototipo</span>.</li>
+  <li>En tierra blanda o barro, poner debajo de cada plato un taco de madera dura de 30 × 30 cm o más.</li>
+  <li>Evitar pisos muy lisos (chapa, hormigón pulido mojado, hielo): la torre podría deslizarse con viento fuerte.</li>
+  <li><b>Lejos de líneas aéreas</b> (10 m o más), de zanjas y de bordes de excavación.</li>
+  <li>Fuera del paso de vehículos, o protegida con conos.</li>
+  <li>Con el prolongador al alcance: 25 m de prolongador entre torres es lo normal.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="patas">6. Abrir las patas y nivelar</h2>
+<ol>
+  <li>Bajar la torre en su lugar, con el mástil abajo.</li>
+  <li>En cada punta, abrir <b>primero la pata de arriba</b> y después la de abajo: sacar el pasador de viaje, girar la pata hacia afuera hasta el tope (90°) y poner el pasador de trabajo. <span class="cf">⚑ orden y pasadores a confirmar en el prototipo</span></li>
+  <li>Bajar el husillo de cada pata con llave o criquet (cabeza hexagonal) hasta que el plato apoye.</li>
+  <li>Nivelar con los 4 husillos hasta que la base quede horizontal (nivel de burbuja sobre la base). Los 4 platos deben quedar <b>cargados</b>: ninguno flojo.</li>
+  <li>Controlar: 4 patas abiertas, 4 pasadores puestos, 4 platos apoyados. <b>Recién ahí se puede subir el mástil.</b></li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="elec" class="salto">7. Conexión eléctrica</h2>
+<p>Todas las torres son iguales y sirven para 220 V o 380 V <b>sin cambiar nada</b>: no hay llave selectora. Las fichas rojas (380 V) y azules (220 V) no entran una en la otra, así que no se pueden confundir.</p>
+
+<div class="dos">
+  <div class="volt v380">
+    <h3>380 V trifásico</h3>
+    <b>Hasta 6 torres en cadena</b>
+    <ol>
+      <li>Grupo o tablero de obra (toma roja 32 A) → <b>ENTRADA</b> de la torre 1.</li>
+      <li><b>SALIDA</b> de la torre 1 → <b>ENTRADA</b> de la torre 2, y así hasta la 6.</li>
+      <li>Prender las torres <b>de a una</b>.</li>
+    </ol>
+  </div>
+  <div class="volt v220">
+    <h3>220 V monofásico</h3>
+    <b>1 sola torre</b>
+    <ol>
+      <li>Chicote adaptador: ficha azul → <b>ENTRADA</b> roja de la torre.</li>
+      <li>Ficha azul a un toma industrial de 16 A o a un grupo monofásico de 3 kVA o más.</li>
+      <li>No encadenar (la siguiente no prende).</li>
+    </ol>
+  </div>
+</div>
+
+<h3>7.1 Por qué cada torre "elige" su fase sola</h3>
+<p>La SALIDA de cada torre tiene las fases <b>rotadas</b>: la fase que en la entrada llega como L2 sale como L1, y así. Por eso, con cables todos iguales, la torre 1 toma la fase L1, la 2 la L2, la 3 la L3, la 4 otra vez la L1… y el grupo queda cargado parejo.</p>
+<figure>
+<svg viewBox="0 0 700 150" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="13" role="img" aria-label="Cadena de 6 torres con la fase de cada una">
+  <rect width="700" height="150" fill="#fff"/>
+  <rect x="6" y="45" width="74" height="56" rx="6" fill="#16181c"/><text x="43" y="70" fill="#fff" text-anchor="middle" font-weight="bold">Grupo</text><text x="43" y="88" fill="#fff" text-anchor="middle">380 V</text>
+  <g font-weight="bold">
+    <g transform="translate(100,0)"><rect y="45" width="82" height="56" rx="6" fill="#fff" stroke="#16181c" stroke-width="2"/><text x="41" y="70" text-anchor="middle">Torre 1</text><text x="41" y="90" text-anchor="middle" fill="#7a4a1e">L1</text></g>
+    <g transform="translate(200,0)"><rect y="45" width="82" height="56" rx="6" fill="#fff" stroke="#16181c" stroke-width="2"/><text x="41" y="70" text-anchor="middle">Torre 2</text><text x="41" y="90" text-anchor="middle">L2</text></g>
+    <g transform="translate(300,0)"><rect y="45" width="82" height="56" rx="6" fill="#fff" stroke="#16181c" stroke-width="2"/><text x="41" y="70" text-anchor="middle">Torre 3</text><text x="41" y="90" text-anchor="middle" fill="#c8102e">L3</text></g>
+    <g transform="translate(400,0)"><rect y="45" width="82" height="56" rx="6" fill="#fff" stroke="#16181c" stroke-width="2"/><text x="41" y="70" text-anchor="middle">Torre 4</text><text x="41" y="90" text-anchor="middle" fill="#7a4a1e">L1</text></g>
+    <g transform="translate(500,0)"><rect y="45" width="82" height="56" rx="6" fill="#fff" stroke="#16181c" stroke-width="2"/><text x="41" y="70" text-anchor="middle">Torre 5</text><text x="41" y="90" text-anchor="middle">L2</text></g>
+    <g transform="translate(600,0)"><rect y="45" width="82" height="56" rx="6" fill="#fff" stroke="#16181c" stroke-width="2"/><text x="41" y="70" text-anchor="middle">Torre 6</text><text x="41" y="90" text-anchor="middle" fill="#c8102e">L3</text></g>
+  </g>
+  <g stroke="#c8102e" stroke-width="3"><line x1="80" y1="73" x2="100" y2="73"/><line x1="182" y1="73" x2="200" y2="73"/><line x1="282" y1="73" x2="300" y2="73"/><line x1="382" y1="73" x2="400" y2="73"/><line x1="482" y1="73" x2="500" y2="73"/><line x1="582" y1="73" x2="600" y2="73"/></g>
+  <text x="350" y="130" text-anchor="middle" fill="#50565f">Prolongador rojo CEE 32 A, 5 × 4 mm², de la SALIDA de una a la ENTRADA de la siguiente</text>
+  <text x="350" y="28" text-anchor="middle" fill="#50565f">Fase que toma cada torre (la rotación la hace la torre, no el cable)</text>
+</svg>
+</figure>
+
+<h3>7.2 Qué grupo electrógeno hace falta</h3>
+<table>
+  <tr><th>Torres</th><th>Consumo</th><th>Grupo recomendado</th><th>Comentario</th></tr>
+  <tr><td>1</td><td>2,2 kVA · 10 A</td><td><b>3 kVA monofásico</b> o cualquier trifásico</td><td>Con 220 V, por el chicote</td></tr>
+  <tr><td>2</td><td>4,4 kVA</td><td><b>10 kVA trifásico</b></td><td>Una fase queda libre</td></tr>
+  <tr><td>3</td><td>6,7 kVA</td><td><b>10 kVA trifásico</b></td><td>Fases parejas (ideal)</td></tr>
+  <tr><td>4 o 5</td><td>8,9 / 11,1 kVA</td><td><b>20 kVA trifásico</b></td><td>Una fase lleva 2 torres (20 A)</td></tr>
+  <tr><td>6</td><td>13,3 kVA</td><td><b>20 kVA trifásico</b></td><td>Fases parejas (ideal): 20 A por fase</td></tr>
+</table>
+<p style="font-size:13px;color:var(--tx2)">Cálculo: 4 × 500 W con factor de potencia 0,9 = 2,2 kVA por torre, más 25 % de margen para el arranque. El grupo se elige por la fase más cargada. Con 6 torres la primera ficha lleva 20 A, el 80 % de los 32 A: por eso el máximo es 6.</p>
+
+<h3>7.3 Puesta a tierra</h3>
+<ul>
+  <li>La tierra llega por la ficha, pero <b>cada torre lleva su jabalina</b> (1/2" × 1 m) con cable verde-amarillo de 6 mm² y morseto.</li>
+  <li><b>Obligatoria cuando se alimenta de un grupo.</b> Clavarla entera en tierra húmeda y conectarla al borne de tierra de la torre antes de enchufar.</li>
+</ul>
+
+<h3>7.4 Orden para conectar y prender</h3>
+<ol>
+  <li>Patas abiertas y nivelada (punto 6). Jabalina conectada.</li>
+  <li>Llave de todas las torres en <b>0</b>. Grupo apagado.</li>
+  <li>Enchufar prolongadores desde el grupo hacia la última torre. Trabar cada ficha (girar la tapa/traba).</li>
+  <li>Arrancar el grupo y esperar que se estabilice.</li>
+  <li>Mirar la luz de cada tablero: <b>verde</b> = puede prender.</li>
+  <li>Poner la llave en <b>I</b> de a una torre, con unos segundos entre una y otra (cada torre tiene un pico de arranque).</li>
+</ol>
+<div class="caja atencion"><b>Las fichas y prolongadores</b> Usar solo prolongadores con fichas CEE rojas de 32 A y cable de goma 5 × 4 mm² (hasta 25–50 m por tramo). No dejar fichas en charcos ni enterradas; si quedan en el piso, con la tapa hacia abajo. Al desenchufar, tirar de la ficha, nunca del cable.</div>
+
+<!-- ============================================================ -->
+<h2 id="mastil" class="salto">8. Subir el mástil y orientar los focos</h2>
+<h3>8.1 Antes de subir</h3>
+<ul>
+  <li>Patas abiertas, trabadas y cargadas (punto 6).</li>
+  <li>Mirar para arriba: nada de cables, techos, ramas ni líneas en los 6 m.</li>
+  <li>Focos en posición de trabajo <b>antes</b> de subir (ver 8.3), así no hay que bajarlo para acomodarlos.</li>
+</ul>
+<h3>8.2 Subir</h3>
+<ol>
+  <li>Girar la manija del winch. Los tramos suben de a uno, en cascada.</li>
+  <li>Seguir hasta el <b>tope</b> (mástil a 6 m).</li>
+  <li><b>Meter el pasador de la junta 1</b> (~1,8 m del piso). Entra a mano, sin martillo.</li>
+  <li><b>Bajar ½ vuelta de manija</b>: el peso pasa del cable al pasador y el cable queda un poco flojo. Así queda trabajando.</li>
+</ol>
+<div class="caja peligro"><b>El winch tiene freno automático: soltar la manija no lo hace caer.</b> Aun así, nunca soltar la manija girando ni dejar el mástil arriba sin el pasador.</div>
+<h3>8.3 Orientar los focos</h3>
+<ul>
+  <li>Cada foco <b>bascula en su lira</b>: aflojar las 2 perillas, inclinar, volver a apretar firme.</li>
+  <li>Los focos no giran en planta: para alumbrar hacia otro lado, se ubica la torre.</li>
+  <li>Inclinar cada foco hacia su lado, apuntando al área de trabajo; no apuntar a caminos ni a la cabina de equipos.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="oper">9. Durante el trabajo</h2>
+<ul>
+  <li>Una recorrida por turno: platos apoyados, pasador puesto, luz verde, fichas secas.</li>
+  <li>Si el piso se ablandó (lluvia), revisar que ningún plato se haya hundido; si pasó, <b>bajar el mástil</b> y renivelar.</li>
+  <li>Con pronóstico o alerta de viento, ráfagas o tormenta eléctrica: <b>bajar el mástil</b> y dejar la torre apagada.</li>
+  <li>No colgar nada del mástil ni de los focos (carteles, banderas, cables).</li>
+  <li>No cargar combustible del grupo con la torre funcionando al lado de la ficha.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="guardar">10. Bajar y guardar</h2>
+<ol>
+  <li>Llave en <b>0</b>.</li>
+  <li><b>Subir ½ vuelta</b> de manija para descargar el pasador.</li>
+  <li><b>Sacar el pasador</b> de la junta 1. <b>Nunca bajar con el pasador puesto</b>: el cable se afloja y puede saltar de la roldana.</li>
+  <li>Bajar con el winch, sin soltar la manija, hasta que el mástil quede abajo del todo.</li>
+  <li>Focos a posición de viaje (verticales, cara al mástil) y perillas apretadas.</li>
+  <li>Apagar el grupo. Desenchufar desde la última torre hacia el grupo. Tapas de las fichas cerradas.</li>
+  <li>Sacar la jabalina y guardarla.</li>
+  <li>Subir los husillos, sacar pasadores de trabajo, cerrar las patas y poner los pasadores de viaje.</li>
+  <li>Guardar prolongadores, chicote y jabalina atados.</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="fallas" class="salto">11. Problemas y soluciones</h2>
+<table>
+  <tr><th style="width:30%">Qué pasa</th><th style="width:30%">Causa probable</th><th>Qué hacer</th></tr>
+  <tr><td>No se prende ninguna luz del tablero</td><td>No llega corriente</td><td>Grupo prendido; fichas enchufadas y trabadas. En cadena: si la torre anterior anda, el problema es el prolongador entre las dos. En 220 V: ¿el chicote va en la ENTRADA?</td></tr>
+  <tr><td>Luz <b>roja</b></td><td>Tensión fuera de 180–250 V: grupo desregulado, neutro cortado, fase floja</td><td>La torre se protege sola. Revisar el grupo y el neutro del prolongador. Cuando la tensión vuelve a estar bien, rearma sola. Si sigue roja, avisar.</td></tr>
+  <tr><td>Luz verde, focos apagados</td><td>Llave en 0, saltó el disyuntor o la térmica</td><td>Llave en I. Subir el disyuntor / la térmica <b>una sola vez</b>. Si vuelve a saltar, no insistir: avisar.</td></tr>
+  <tr><td>Salta el disyuntor (30 mA)</td><td>Humedad en una ficha o foco, cable pelado</td><td>Secar fichas, revisar prolongadores. Si sigue, dejarla apagada y avisar.</td></tr>
+  <tr><td>Salta la térmica al prender varias torres</td><td>Prendidas todas juntas</td><td>Prender de a una.</td></tr>
+  <tr><td>En 220 V, la 2.ª torre no prende</td><td>No se puede encadenar en 220 V</td><td>Una torre por toma o grupo monofásico, o usar 380 V.</td></tr>
+  <tr><td>Un foco apagado</td><td>Foco o su ficha</td><td>Con la torre apagada y el mástil abajo: revisar su ficha azul en la caja del cabezal. Si sigue, avisar (el foco se cambia desenchufándolo).</td></tr>
+  <tr><td>Parpadean todos</td><td>Grupo con poca potencia o tensión inestable</td><td>Ver tabla 7.2; probar con menos torres.</td></tr>
+  <tr><td>El mástil no sube o sube a los saltos</td><td>Cable fuera de la roldana, tramo trabado, suciedad</td><td>No forzar. Bajar, revisar cables y roldanas. Avisar.</td></tr>
+  <tr><td>El mástil no baja</td><td>Pasador puesto</td><td>½ vuelta arriba y sacar el pasador. Nunca forzar el winch.</td></tr>
+  <tr><td>La torre se movió o un plato se hundió</td><td>Piso blando</td><td>Bajar el mástil, poner tacos, renivelar.</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="mant">12. Mantenimiento</h2>
+<p>Intervalos recomendados <span class="cf">⚑ a ajustar con el uso del prototipo</span>. Siempre con el mástil abajo y la torre desenchufada.</p>
+<table>
+  <tr><th style="width:22%">Cuándo</th><th style="width:30%">Qué</th><th>Cómo / criterio</th></tr>
+  <tr><td rowspan="4"><b>Cada entrega y retiro</b></td><td>Planilla del punto 14</td><td>Completar y firmar con el cliente.</td></tr>
+  <tr><td>Luces y protecciones</td><td>Enchufar: luz verde. Apretar el botón de prueba del disyuntor: tiene que saltar.</td></tr>
+  <tr><td>Fichas y prolongadores</td><td>Sin golpes, sin tierra adentro, tapas y trabas sanas, goma del cable sin cortes.</td></tr>
+  <tr><td>Estructura a la vista</td><td>Pasadores con su traba y su cable, husillos que giren, soldaduras sin fisuras, nada doblado.</td></tr>
+  <tr><td rowspan="5"><b>Cada mes o 200 h</b></td><td>Cables de acero 1/4"</td><td>Recorrerlos con guante: <b>cambiar</b> si hay 6 o más alambres cortados en un largo de 6 diámetros (≈ 4 cm), aplastamiento, "jaula de pájaro", nudos u óxido profundo.</td></tr>
+  <tr><td>Roldanas</td><td>Juntas 1 a 3 (buje de bronce): grasa. Junta 4 (rulemán): girar a mano, sin ruido ni juego. Que el cable no se salga de la garganta.</td></tr>
+  <tr><td>Patines de nylon de las juntas</td><td>Sin desgaste que deje juego entre tramos. Cambiar si el tramo se mueve de lado.</td></tr>
+  <tr><td>Husillos de las patas</td><td>Limpiar y engrasar la rosca M30.</td></tr>
+  <tr><td>Winch</td><td>Probar el freno con el mástil a medio subir: soltar la manija y que no baje. Grasa en el engranaje.</td></tr>
+  <tr><td rowspan="4"><b>Cada año</b></td><td>Tablero (electricista)</td><td>Ajustar bornes, revisar prensacables y burletes, medir la resistencia de tierra.</td></tr>
+  <tr><td>Focos</td><td>Limpiar vidrios y aletas; revisar lira y perillas.</td></tr>
+  <tr><td>Pintura</td><td>Retocar con epoxi rojo donde haya óxido o golpes.</td></tr>
+  <tr><td>Cables de acero</td><td>Cambio preventivo cada <span class="cf">⚑ a definir</span> aunque se vean bien. Siempre cable 1/4" 7×19 galvanizado con certificado.</td></tr>
+</table>
+<div class="caja atencion"><b>Repuestos: siempre los mismos</b> Cable de acero 1/4" 7×19 galvanizado certificado · pasadores originales (no reemplazar por un bulón ni un hierro) · térmica 16 A <b>curva D</b> (una curva C salta al prender) · disyuntor 30 mA · fichas CEE originales.</div>
+
+<!-- ============================================================ -->
+<h2 id="tecnico" class="salto">13. Para el electricista</h2>
+<h3>13.1 Qué hay en cada torre</h3>
+<table>
+  <tr><th>Elemento</th><th>Dato</th><th>Para qué</th></tr>
+  <tr><td>ENTRADA (cajita del lado largo)</td><td>CEE 32 A 5P macho de panel, roja, IP67, 400 V, 6 h</td><td>Alimentación de la torre</td></tr>
+  <tr><td>SALIDA (al lado de la entrada)</td><td>CEE 32 A 5P hembra de panel, roja, con tapa</td><td>Pasa las 3 fases rotadas a la siguiente</td></tr>
+  <tr><td>Puente entrada → salida</td><td>5 × 4 mm², 0,6 m, terminales tubulares</td><td>Sin protección en el medio: cada torre se protege sola</td></tr>
+  <tr><td>Cable cajita → tablero</td><td>3 × 4 mm² (L1 de la entrada + N + T)</td><td>Toma la fase de esta torre</td></tr>
+  <tr><td>Protector de tensión DIN</td><td>Corta &lt; 180 V y &gt; 250 V, rearme automático</td><td>Neutro cortado (380 V en los focos), grupo desregulado</td></tr>
+  <tr><td>Descargador (DPS)</td><td>2P clase II</td><td>Picos de tensión</td></tr>
+  <tr><td>Disyuntor</td><td>2P 25 A / 30 mA, tipo AC</td><td>Protección de personas</td></tr>
+  <tr><td>Térmica</td><td>2P 16 A <b>curva D</b>, 6 kA</td><td>Aguanta el arranque de los drivers LED de los 4 focos</td></tr>
+  <tr><td>Interruptor</td><td>2P 20 A, frente IP65, 0-I</td><td>Prender y apagar (no se usa la térmica como llave)</td></tr>
+  <tr><td>Pilotos</td><td>LED 22 mm IP65: verde (después del protector), rojo (protector abierto)</td><td>Estado a la vista</td></tr>
+  <tr><td>Gabinete</td><td>IP65, 300 × 300 × 150, riel DIN, al pie del mástil</td><td>—</td></tr>
+  <tr><td>Cable al cabezal</td><td>Espiral 3 × 2,5 mm² (L+N+T)</td><td>Acompaña al mástil al subir</td></tr>
+  <tr><td>Caja del cabezal</td><td>IP65 ≈ 160 × 120 × 80, bornera, 4 tomas CEE 16 A azules</td><td>Un toma por foco: cambio rápido</td></tr>
+  <tr><td>Tierra</td><td>Bornera + jabalina 1/2" × 1 m + 6 mm² verde-amarillo</td><td>Obligatoria con grupo</td></tr>
+  <tr><td>Chicote adaptador</td><td>CEE 16 A azul 3P macho → CEE 32 A 5P roja hembra, 3 × 2,5 mm², solo L1+N+T</td><td>Prender 1 torre con 220 V</td></tr>
+</table>
+
+<h3>13.2 Unifilar</h3>
+<figure>
+<svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="12" role="img" aria-label="Unifilar del tablero de la torre">
+  <rect width="720" height="230" fill="#fff"/>
+  <!-- entrada / salida -->
+  <rect x="10" y="20" width="110" height="70" rx="6" fill="#fdecee" stroke="#c8102e" stroke-width="2"/><text x="65" y="45" text-anchor="middle" font-weight="bold">ENTRADA</text><text x="65" y="62" text-anchor="middle">CEE 32 A 5P</text><text x="65" y="78" text-anchor="middle">L1 L2 L3 N T</text>
+  <rect x="10" y="140" width="110" height="70" rx="6" fill="#fdecee" stroke="#c8102e" stroke-width="2"/><text x="65" y="165" text-anchor="middle" font-weight="bold">SALIDA</text><text x="65" y="182" text-anchor="middle">L1←L2 · L2←L3</text><text x="65" y="198" text-anchor="middle">L3←L1 · N, T</text>
+  <line x1="65" y1="90" x2="65" y2="140" stroke="#16181c" stroke-width="2"/><text x="72" y="118">puente 5×4</text>
+  <!-- cadena de aparatos -->
+  <line x1="120" y1="55" x2="160" y2="55" stroke="#7a4a1e" stroke-width="3"/><text x="124" y="48">L1+N</text>
+  <g font-size="11.5">
+    <rect x="160" y="30" width="86" height="50" rx="4" fill="#f6f7f9" stroke="#16181c"/><text x="203" y="52" text-anchor="middle">Protector</text><text x="203" y="67" text-anchor="middle">180–250 V</text>
+    <rect x="266" y="30" width="86" height="50" rx="4" fill="#f6f7f9" stroke="#16181c"/><text x="309" y="52" text-anchor="middle">Disyuntor</text><text x="309" y="67" text-anchor="middle">25 A 30 mA</text>
+    <rect x="372" y="30" width="86" height="50" rx="4" fill="#f6f7f9" stroke="#16181c"/><text x="415" y="52" text-anchor="middle">Térmica</text><text x="415" y="67" text-anchor="middle">16 A curva D</text>
+    <rect x="478" y="30" width="86" height="50" rx="4" fill="#f6f7f9" stroke="#16181c"/><text x="521" y="52" text-anchor="middle">Llave 0-I</text><text x="521" y="67" text-anchor="middle">2P 20 A</text>
+    <rect x="584" y="20" width="126" height="70" rx="4" fill="#eef4fb" stroke="#0b5cad"/><text x="647" y="42" text-anchor="middle">Espiral 3×2,5</text><text x="647" y="58" text-anchor="middle">Caja cabezal</text><text x="647" y="74" text-anchor="middle">4 tomas azules</text>
+  </g>
+  <g stroke="#16181c" stroke-width="2"><line x1="246" y1="55" x2="266" y2="55"/><line x1="352" y1="55" x2="372" y2="55"/><line x1="458" y1="55" x2="478" y2="55"/><line x1="564" y1="55" x2="584" y2="55"/></g>
+  <!-- pilotos y DPS -->
+  <line x1="246" y1="70" x2="256" y2="70" stroke="#16181c"/><line x1="256" y1="70" x2="256" y2="130" stroke="#16181c"/>
+  <circle cx="230" cy="150" r="10" fill="#22b14c"/><text x="246" y="154">verde: después del protector</text>
+  <circle cx="230" cy="178" r="10" fill="#e0182d"/><text x="246" y="182">rojo: protector abierto</text>
+  <rect x="440" y="130" width="90" height="36" rx="4" fill="#f6f7f9" stroke="#16181c"/><text x="485" y="152" text-anchor="middle">DPS clase II</text>
+  <rect x="560" y="130" width="150" height="36" rx="4" fill="#f6f7f9" stroke="#1f8a3a"/><text x="635" y="152" text-anchor="middle">Tierra + jabalina</text>
+  <text x="440" y="200" fill="#50565f">Colores AR: L1 marrón · L2 negro · L3 rojo · N celeste · T verde-amarillo</text>
+</svg>
+<figcaption>Unifilar simplificado de una torre. El tablero toma siempre la L1 de su ENTRADA; la rotación está en la SALIDA.</figcaption>
+</figure>
+
+<h3>13.3 Números para controlar</h3>
+<ul>
+  <li>Corriente por foco: 500 W / (220 V × 0,9) = <b>2,5 A</b>. Por torre: <b>10,1 A</b>.</li>
+  <li>Térmica: 16 A ≥ 1,25 × 10,1 = 12,6 A ✔. Toma azul por foco: 16 A ≥ 2,5 A ✔.</li>
+  <li>Cadena: con la rotación, 6 torres = 2 por fase = <b>20,2 A</b> en la primera ficha ≤ 80 % de 32 A (25,6 A) ✔. Con fichas de 16 A entrarían solo 3 torres.</li>
+  <li>Caída de tensión en un prolongador de 25 m 5 × 4 mm² con 20 A: ≈ 4,4 V (2 %) ✔.</li>
+  <li>Arranque (inrush) de los drivers: Lumenac no lo publica; se adoptó curva D (dispara a 160–320 A) y encendido de a una torre. <span class="cf">⚑ medir con pinza en el prototipo</span></li>
+  <li>Normas de referencia: AEA 90364, IEC 60309 (fichas), IEC 60529 (IP), IEC 60598 (luminarias), IEC 60898 (térmicas), IEC 61439 (tableros).</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="check" class="salto">14. Planilla de entrega y retiro</h2>
+<p>Torre N.º: ________ &nbsp; Cliente: ______________________ &nbsp; Locación: ______________________</p>
+<table class="check">
+  <tr><th></th><th>Control</th><th style="width:16%">Entrega</th><th style="width:16%">Retiro</th></tr>
+  <tr><td>☐</td><td>4 patas, 4 pasadores de trabajo y de viaje, husillos que giran</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Pasador de la junta 1 con su cable de retención</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Mástil sube y baja bien; freno del winch probado</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Cables de acero sin alambres cortados ni aplastados</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>4 focos prenden; vidrios sanos; perillas de la lira</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Luz verde; botón de prueba del disyuntor salta</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Fichas ENTRADA / SALIDA con tapa y traba</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Prolongador rojo 5 × 4 mm² (cant. ___ · largo ___ m)</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Chicote adaptador 220 V azul</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Jabalina + cable de tierra + morseto</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Calcos legibles (tablero, conexión, QR, seguridad)</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Pintura y estructura: golpes, óxido, fisuras (anotar)</td><td></td><td></td></tr>
+  <tr><td>☐</td><td>Horas de uso (si tiene horímetro) / días</td><td></td><td></td></tr>
+</table>
+<p>Observaciones: __________________________________________________________________________</p>
+<div class="firma"><div>Fecha</div><div>Entrega / retira (Powell)</div><div>Recibe / entrega (cliente)</div></div>
+
+<footer>
+  Powell Rental &amp; Services SAS · Centenario, Neuquén · Powell Light Stand PLS-1 · Manual edición 1 (octubre 2026).<br>
+  Este manual no reemplaza la capacitación del operador ni las normas de seguridad de la locación.
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Powell Light Stand — Cómo conectar</title>
+<meta name="description" content="Guía rápida de conexión de la torre de iluminación Powell Light Stand PLS-1: 220 V o 380 V, cuántas torres, luces y problemas.">
+<style>
+:root{
+  --rojo:#c8102e; --rojo2:#9e0c24; --azul:#0b5cad; --verde:#1f8a3a; --ama:#f2b705;
+  --tx:#16181c; --tx2:#4a505a; --bg:#f4f5f7; --card:#fff; --linea:#d9dce1;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+header{background:var(--tx);color:#fff;padding:18px 16px 16px}
+header .marca{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+header h1{margin:4px 0 0;font-size:24px;line-height:1.2}
+header p{margin:6px 0 0;font-size:15px;opacity:.85}
+main{max-width:620px;margin:0 auto;padding:14px 16px 40px}
+nav.saltos{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 14px}
+nav.saltos a{flex:1 1 auto;text-align:center;text-decoration:none;font-weight:700;font-size:15px;padding:10px 8px;border-radius:10px;border:2px solid var(--tx);color:var(--tx);background:#fff}
+section{background:var(--card);border:1px solid var(--linea);border-radius:14px;padding:16px;margin:0 0 14px}
+h2{margin:0 0 10px;font-size:20px;line-height:1.25}
+h3{margin:14px 0 6px;font-size:17px}
+.volt{display:flex;align-items:center;gap:12px;border-radius:12px;color:#fff;padding:12px 14px;margin:-4px 0 12px}
+.volt>b{font-size:34px;line-height:1}
+.volt span{font-size:15px;line-height:1.3}
+.v380{background:var(--rojo)}
+.v220{background:var(--azul)}
+ol.pasos{margin:0;padding:0;list-style:none;counter-reset:p}
+ol.pasos li{counter-increment:p;position:relative;padding:0 0 10px 40px;min-height:30px}
+ol.pasos li::before{content:counter(p);position:absolute;left:0;top:-1px;width:28px;height:28px;border-radius:50%;background:var(--tx);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+.cadena{display:flex;align-items:center;gap:4px;overflow-x:auto;padding:6px 0 10px;font-size:13px;font-weight:700}
+.cadena .n{border:2px solid var(--tx);border-radius:8px;padding:6px 7px;white-space:nowrap;text-align:center;background:#fff}
+.cadena .n small{display:block;font-weight:400;color:var(--tx2)}
+.cadena .g{background:var(--tx);color:#fff;border-color:var(--tx)}
+.cadena .f{color:var(--rojo);font-size:18px}
+.alerta{border-left:5px solid var(--ama);background:#fff8e1;padding:10px 12px;border-radius:8px;margin:10px 0 0;font-size:16px}
+.no{border-left-color:var(--rojo);background:#fdecee}
+table{width:100%;border-collapse:collapse;font-size:16px}
+td,th{padding:8px 6px;border-bottom:1px solid var(--linea);text-align:left;vertical-align:top}
+th{font-size:14px;color:var(--tx2);font-weight:600}
+.luz{display:flex;gap:12px;align-items:flex-start;margin:0 0 10px}
+.punto{flex:0 0 26px;height:26px;border-radius:50%;margin-top:1px;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--linea)}
+.verde{background:#22b14c}.rojo{background:#e0182d}.apagado{background:#9aa0a6}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:15px}
+.cols div{border:1px solid var(--linea);border-radius:10px;padding:8px 10px}
+.cols b{display:block;font-size:22px}
+footer{text-align:center;font-size:14px;color:var(--tx2);padding:0 16px 30px}
+footer a{color:var(--tx)}
+@media (max-width:380px){body{font-size:16px}.volt>b{font-size:28px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="marca">Powell Rental &amp; Services</div>
+  <h1>Torre de iluminación<br>Powell Light Stand PLS-1</h1>
+  <p>Guía rápida: cómo conectarla y prenderla</p>
+</header>
+<main>
+
+<nav class="saltos">
+  <a href="#v380" style="border-color:var(--rojo);color:var(--rojo)">380 V</a>
+  <a href="#v220" style="border-color:var(--azul);color:var(--azul)">220 V</a>
+  <a href="#luces">Luces</a>
+  <a href="#falla">No prende</a>
+</nav>
+
+<section>
+  <h2>Antes de enchufar</h2>
+  <ol class="pasos">
+    <li>Las <b>4 patas abiertas</b>, trabadas y con los husillos apoyados. <b>Sin las 4 patas no se sube el mástil.</b></li>
+    <li>Clavar la <b>jabalina</b> y conectar el cable verde-amarillo al borne de tierra de la torre (siempre que se use un grupo).</li>
+    <li>Llave de encendido de la torre en <b>0</b> y el grupo apagado.</li>
+  </ol>
+  <div class="cols" style="margin-top:6px">
+    <div>Cada torre<b>4 focos</b>500 W cada uno</div>
+    <div>Consume<b>2 kW</b>≈ 10 A en 220 V</div>
+  </div>
+</section>
+
+<section id="v380">
+  <div class="volt v380"><b>380 V</b><span>Trifásico · ficha <b>ROJA</b> de 5 patas<br><b>Hasta 6 torres en cadena</b></span></div>
+  <ol class="pasos">
+    <li>Del grupo o tablero de obra (ficha roja 32 A) a la <b>ENTRADA</b> de la torre 1, con el prolongador rojo.</li>
+    <li>De la <b>SALIDA</b> de la torre 1 a la <b>ENTRADA</b> de la torre 2. Y así hasta 6 torres.</li>
+    <li>Prender el grupo. Prender las torres <b>de a una</b> (llave en I), esperando unos segundos entre una y otra.</li>
+  </ol>
+  <div class="cadena" aria-label="Cadena de torres">
+    <div class="n g">Grupo<small>380 V</small></div><span class="f">→</span>
+    <div class="n">Torre 1<small>fase L1</small></div><span class="f">→</span>
+    <div class="n">Torre 2<small>fase L2</small></div><span class="f">→</span>
+    <div class="n">Torre 3<small>fase L3</small></div><span class="f">→</span>
+    <div class="n">… 6</div>
+  </div>
+  <p style="margin:0;font-size:15px;color:var(--tx2)">Cada torre se pasa sola a la fase siguiente: los prolongadores son todos iguales y no hay que elegir nada. Conviene usar <b>3 o 6 torres</b> (fases parejas).</p>
+  <div class="alerta no"><b>Máximo 6 torres</b> por cadena. Para más, arrancar otra cadena desde el grupo.</div>
+</section>
+
+<section id="v220">
+  <div class="volt v220"><b>220 V</b><span>Monofásico · con el <b>chicote adaptador</b><br><b>1 sola torre</b></span></div>
+  <ol class="pasos">
+    <li>Enchufar el <b>chicote adaptador</b> (ficha azul → ficha roja) en la <b>ENTRADA</b> de la torre.</li>
+    <li>La ficha azul va a un toma industrial <b>azul 16 A</b> o a un grupo monofásico de <b>3 kVA o más</b>.</li>
+    <li>Llave de la torre en I.</li>
+  </ol>
+  <div class="alerta no">En 220 V <b>no se encadena</b>: la torre siguiente no prende (le llega una fase que no existe).</div>
+  <div class="alerta">Un toma común de casa (10 A) queda al límite: puede calentar. Usar toma de 16 A o más.</div>
+</section>
+
+<section>
+  <h2>¿Qué grupo hace falta?</h2>
+  <table>
+    <tr><th>Torres</th><th>Grupo</th></tr>
+    <tr><td><b>1</b></td><td>3 kVA monofásico (o cualquier trifásico)</td></tr>
+    <tr><td><b>2 o 3</b></td><td>10 kVA trifásico</td></tr>
+    <tr><td><b>4, 5 o 6</b></td><td>20 kVA trifásico</td></tr>
+  </table>
+</section>
+
+<section id="luces">
+  <h2>Las luces del tablero</h2>
+  <div class="luz"><span class="punto verde"></span><div><b>Verde:</b> todo bien, la torre tiene tensión buena.</div></div>
+  <div class="luz"><span class="punto rojo"></span><div><b>Roja:</b> tensión mala (grupo desregulado o neutro cortado). La torre se protege sola y <b>no prende</b>. Cuando la tensión se arregla, vuelve sola.</div></div>
+  <div class="luz"><span class="punto apagado"></span><div><b>Ninguna:</b> no llega corriente. Revisar fichas, prolongador y grupo.</div></div>
+</section>
+
+<section id="falla">
+  <h2>Si no prende</h2>
+  <table>
+    <tr><th>Qué pasa</th><th>Qué hacer</th></tr>
+    <tr><td>Luz roja</td><td>Revisar el grupo (tensión, neutro). No tocar el tablero: avisar a Powell.</td></tr>
+    <tr><td>Ninguna luz</td><td>Fichas bien enchufadas y trabadas; grupo prendido. En cadena: ¿prende la torre anterior?</td></tr>
+    <tr><td>Verde pero no prenden los focos</td><td>Llave en I. Ver si saltó el <b>disyuntor</b> o la <b>térmica</b>; subirlos una vez. Si vuelve a saltar, <b>no insistir</b>: avisar.</td></tr>
+    <tr><td>Un solo foco apagado</td><td>Avisar a Powell (se cambia desenchufando su ficha azul arriba).</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Nunca</h2>
+  <ol class="pasos">
+    <li>Subir el mástil sin las 4 patas abiertas y apoyadas.</li>
+    <li>Dejar el mástil arriba con tormenta o viento fuerte: <b>bajarlo</b>.</li>
+    <li>Mover la torre con el mástil arriba.</li>
+    <li>Abrir el tablero con la torre enchufada.</li>
+    <li>Trabajar cerca de líneas eléctricas aéreas.</li>
+  </ol>
+</section>
+
+</main>
+<footer>
+  <a href="manual_completo_PLS-1.html">Manual completo (PDF para imprimir)</a><br><br>
+  Powell Rental &amp; Services · Centenario, Neuquén<br>
+  Ante cualquier duda, llamar antes de tocar.
+</footer>
+</body>
+</html>
